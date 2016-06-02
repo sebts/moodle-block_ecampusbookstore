@@ -38,6 +38,7 @@ class block_ecampusbookstore extends block_base {
         if ($this->content !== null) {
             return $this->content;
         }
+        $this->content = new stdClass;
 
         // Get parameters from config DB
         $accesscodeurl = get_config('ecampusbookstore', 'generateaccesscodeurl');
@@ -51,7 +52,7 @@ class block_ecampusbookstore extends block_base {
 
         // Determine if current user should be considered as a student or as an intructor
         $usestudentportal = true;
-        $coursecontext = context_module::instance($COURSE->id);
+        $coursecontext = context_course::instance($COURSE->id);
         if (has_capability('moodle/course:viewhiddensections', $coursecontext, $USER->id, false) ) {
             $usestudentportal = false;
         }
