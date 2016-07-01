@@ -22,7 +22,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2016051801;                // The current plugin version (Date: YYYYMMDDHHXX)
+$plugin->version   = 2016070100;                // The current plugin version (Date: YYYYMMDDHHXX)
 $plugin->release   = '2.7.0+';                  // Human-friendly version name
 $plugin->requires  = 2014050600;                // Requires Moodle 2.7
 $plugin->component = 'block_ecampusbookstore';  // Full name of the plugin (used for diagnostics)
