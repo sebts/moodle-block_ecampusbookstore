@@ -16,6 +16,10 @@ require_once('../../config.php');
 require_once 'getaccesscode.php';
 require_once 'services_usercourses.php';
 
+if (!isloggedin() || isguestuser()) {
+    redirect(new moodle_url($CFG->wwwroot),'You must be logged in to access the Virtual Bookstore.',3);
+}
+
 $ecampusform = get_ecampusbookstoreform();
 echo $ecampusform;
 
