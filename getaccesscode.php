@@ -13,14 +13,13 @@ function get_student_access_code($accesscodeurl, $schoolid, $secretkey, $usernam
 
     // Get cURL resource
     $curl = curl_init();
-
-    // Set cURL options do a POST request with supplied parms and capture the response to a variable
-    curl_setopt_array($curl, array( CURLOPT_URL => $accesscodeurl
-                                  , CURLOPT_POST => 1
-                                  , CURLOPT_POSTFIELDS => $params
-                                  , CURLOPT_RETURNTRANSFER => 1
-                                  )
-                     );
+					 
+	// Set cURL options do a POST request with supplied parms and capture the response to a variable
+	$curlopturl = $accesscodeurl . "?" . $params;
+	curl_setopt_array($curl, array( CURLOPT_URL => $curlopturl
+								  , CURLOPT_RETURNTRANSFER => 1
+								  )
+					 );
 
     // Send the request & capture the response
     $resp = curl_exec($curl);
