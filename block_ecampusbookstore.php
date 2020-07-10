@@ -48,7 +48,7 @@ class block_ecampusbookstore extends block_base {
         $secretkey = get_config('ecampusbookstore', 'secretkey');
 
         $userid = $USER->id;
-        $username = $USER->username;
+        $username = $USER->idnumber;
         $useremail = $USER->email;
         $userfullname = $USER->firstname.' '.$USER->lastname;
 

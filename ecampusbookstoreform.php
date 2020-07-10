@@ -33,7 +33,7 @@ function get_ecampusbookstoreform() {
     $schoolid = get_config('ecampusbookstore', 'schoolid');
     $secretkey = get_config('ecampusbookstore', 'secretkey');
     $userid = $USER->id;
-    $username = $USER->username;
+    $username = $USER->idnumber;
     $useremail = $USER->email;
     $userfullname = $USER->firstname.' '.$USER->lastname;
 
@@ -46,7 +46,7 @@ function get_ecampusbookstoreform() {
     // Determine if current user should be considered as a student or as an intructor
     $usestudentportal = true;
     $coursecontext = context_course::instance($COURSE->id);
-    if (has_capability('moodle/course:viewhiddensections', $coursecontext, $USER->id, false) ) {
+    if (has_capability('moodle/course:viewhiddensections', $coursecontext) ) {
         // If the current user has the capability to view hidden sections on the course page
         // then the user is 'more' than a student or an auditor. In that case, assume that the
         // user is an instructor or an assistant and give the user access to the eCampus FAST
